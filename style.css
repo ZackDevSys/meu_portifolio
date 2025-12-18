@@ -1,0 +1,750 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Press Start 2P";
+    scroll-behavior: smooth;
+}
+
+body {
+    height: 100vh;
+    background-image: url(img/eb8381bcdaeace4d48613a8ad6d80baa.gif);
+    background-size: cover;
+    color: #04a204;
+    overflow-x: hidden;
+}
+
+/* OVERLAY ESCURO GLOBAL */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-color: #040204c4;
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* OVERLAY ANIMADO */
+.overlay {
+    position: fixed;
+    inset: 0;
+    background:
+        repeating-linear-gradient(to bottom,
+            rgba(0, 255, 0, 0.05),
+            rgba(0, 255, 0, 0.05) 1px,
+            transparent 2px,
+            transparent 4px);
+    animation: scan 5s linear infinite;
+    pointer-events: none;
+    z-index: 1;
+}
+
+@keyframes scan {
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: 0 100%;
+    }
+}
+
+/* HEADER */
+.interface {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+    /* acima do overlay */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 3rem;
+    background-color: #040204da;
+    backdrop-filter: blur(6px);
+}
+
+/* MENU */
+.menu-navegacao {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.menu-navegacao ul {
+    display: flex;
+    gap: 3rem;
+    list-style: none;
+}
+
+.menu-navegacao a {
+    display: inline-block;
+    color: #04a204;
+    text-decoration: none;
+    text-shadow: 0 0 5px #04a204;
+}
+
+.menu-navegacao a:hover {
+    color: greenyellow;
+    text-shadow: 0 0 20px greenyellow;
+    transform: scale(1.1);
+    transition: 0.3s;
+}
+
+/* BOTÃO */
+.btn-contato button {
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: 30px;
+    border: none;
+    background: #04a204;
+    cursor: pointer;
+    box-shadow: 0 0 15px #04a204;
+}
+
+.btn-contato button:hover {
+    background: greenyellow;
+    box-shadow: 0 0 30px greenyellow;
+    transform: scale(1.1);
+    transition: 0.3s;
+}
+
+/* HERO */
+.hero {
+    margin: 10rem 5rem;
+    position: relative;
+    z-index: 2;
+    padding: 5rem 2rem;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: 0 0 20px #04a204;
+    background-color: black;
+}
+
+.hero .typing {
+    max-width: 900px;
+    line-height: 1.9;
+    margin-bottom: 3.5rem;
+    /* espaço até os ícones */
+    font-size: 0.8rem;
+}
+
+/* GLITCH */
+.glitch {
+    font-size: 3rem;
+    margin-top: 3rem;
+    margin-bottom: 2.5rem;
+    /* separa do texto */
+    letter-spacing: 4px;
+    position: relative;
+    color: greenyellow;
+}
+
+.glitch::before,
+.glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    left: 0;
+}
+
+.glitch::before {
+    animation: glitch 2s infinite;
+    color: #0f0;
+}
+
+.glitch::after {
+    animation: glitch 1.5s infinite reverse;
+    color: #00ffcc;
+}
+
+@keyframes glitch {
+    0% {
+        clip-path: inset(0 0 80% 0);
+    }
+
+    50% {
+        clip-path: inset(40% 0 40% 0);
+    }
+
+    100% {
+        clip-path: inset(80% 0 0 0);
+    }
+}
+
+/* SKILLS */
+.habilidades {
+    position: relative;
+    z-index: 2;
+    padding: 4rem 3rem;
+    text-align: center;
+}
+
+.habilidades>h2 {
+    margin-bottom: 4rem;
+    font-size: 30px;
+    letter-spacing: 3px;
+    color: #04a204;
+}
+
+/* h2 dentro dos cards de skills */
+.habilidades .skills h2 {
+    text-align: center;
+    display: block;
+    width: 100%;
+}
+
+.habilidades .skills {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.skills-cards {
+    margin: 4rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 3rem;
+    flex-wrap: wrap;
+}
+
+.skills {
+    position: relative;
+    width: 330px;
+    height: 500px;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #04a204;
+    border-radius: 10px;
+    box-shadow: 0 0 15px #04a204;
+}
+
+/* LOADER TERMINAL */
+#loader {
+    position: fixed;
+    inset: 0;
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    animation: loaderOut 1s ease forwards;
+    animation-delay: 5s;
+}
+
+.terminal {
+    color: #04a204;
+    font-size: 0.8rem;
+    line-height: 1.8;
+    text-shadow: 0 0 5px #04a204;
+}
+
+.ok {
+    color: greenyellow;
+}
+
+/* DOTS ANIMATION */
+.dots::after {
+    content: "";
+    animation: dots 1.5s infinite;
+}
+
+@keyframes dots {
+    0% {
+        content: "";
+    }
+
+    33% {
+        content: ".";
+    }
+
+    66% {
+        content: "..";
+    }
+
+    100% {
+        content: "...";
+    }
+}
+
+/* PROGRESS BAR */
+.progress-bar {
+    width: 300px;
+    height: 10px;
+    border: 1px solid #04a204;
+    margin-top: 15px;
+    overflow: hidden;
+}
+
+.progress {
+    height: 100%;
+    width: 0;
+    background: #04a204;
+    animation: loading 4s forwards;
+}
+
+/* PROGRESS ANIMATION */
+@keyframes loading {
+    to {
+        width: 100%;
+    }
+}
+
+/* LOADER SUMINDO */
+@keyframes loaderOut {
+    to {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+/* SOCIAL ICONS */
+.social-icons {
+    margin-top: 1rem;
+    display: flex;
+    gap: 25px;
+    z-index: 2;
+}
+
+.social-icons a {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #04a204;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #04a204;
+    transition: 0.2s;
+}
+
+.social-icons svg {
+    width: 20px;
+    height: 20px;
+    color: #04a204;
+    fill: #04a204;
+    filter: drop-shadow(0 0 5px #04a204);
+}
+
+.social-icons svg text {
+    color: black;
+    font-family: "Press Start 2P";
+    font-weight: bold;
+    pointer-events: none;
+}
+
+/* HOVER NEON */
+.social-icons a:hover {
+    box-shadow:
+        0 0 10px greenyellow,
+        0 0 25px greenyellow,
+        0 0 40px greenyellow;
+    transform: scale(1.15);
+}
+
+.social-icons a:hover svg {
+    color: greenyellow;
+    fill: greenyellow;
+    filter: drop-shadow(0 0 10px greenyellow);
+}
+
+.hud-circle {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #04a204 0%, transparent 70%);
+    padding: 10px;
+    position: relative;
+    overflow: hidden;
+    animation: movendoFoto 2s ease-in-out infinite alternate;
+    box-shadow: 0 0 25px #04a204, 0 0 70px #04a204, 0 0 150px #04a204;
+}
+
+/* Imagem dentro do círculo */
+.hud-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/* Animação de borda HUD */
+@keyframes movendoFoto {
+    0% {
+        top: 0;
+    }
+
+    100% {
+        top: -20px;
+    }
+}
+
+/* ===== SOBRE (HUD GAMER) ===== */
+.sobre {
+    position: relative;
+    z-index: 2;
+    padding: 7rem 5rem;
+    text-align: center;
+}
+
+.sobre h2 {
+    font-size: 30px;
+    margin-top: 1rem;
+    margin-bottom: 4rem;
+    letter-spacing: 3px;
+    color: #04a204;
+}
+
+/* BLOCO HUD */
+.conteudo-sobre {
+    display: grid;
+    z-index: 2;
+    height: auto;
+    position: relative;
+    grid-template-columns: 1fr auto 2fr;
+    align-items: center;
+    gap: 4rem;
+    padding: 2rem 2rem;
+    background: black;
+    border-radius: 15px;
+    box-shadow: 0 0 20px #04a204;
+}
+
+/* IMAGEM */
+.img-sobre {
+    display: flex;
+    justify-content: center;
+}
+
+.img-sobre img {
+    margin: 3rem 3rem;
+    width: 300px;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 0 20px #04a204;
+}
+
+.txt-sobre {
+    color: #04a204;
+    line-height: 1.8;
+    text-align: left;
+    font-size: 0.8rem;
+    margin: 3rem 2rem;
+}
+
+.txt-sobre p {
+    margin: 30px 0;
+    text-align: justify;
+}
+
+/* PROJETOS */
+.projetos {
+    position: relative;
+    z-index: 2;
+    padding: 4rem 3rem;
+    text-align: center;
+}
+
+.projetos h2 {
+    margin-top: 3rem;
+    font-size: 30px;
+    letter-spacing: 3px;
+    color: #04a204;
+}
+
+.cards {
+    margin: 4rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 3rem;
+    flex-wrap: wrap;
+}
+
+.card {
+    position: relative;
+    overflow: hidden;
+    width: 330px;
+    height: 500px;
+    background-image: url(img/plano-de-fundo-2.jpg);
+    background-size: cover;
+    background-position: 100% 0;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 0 15px #04a204;
+    transition: 5s;
+}
+
+.card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+/* GARANTE QUE O TEXTO FIQUE ACIMA DO OVERLAY */
+.card * {
+    position: relative;
+    z-index: 2;
+    text-shadow: 0 0 20px greenyellow;
+}
+
+.card:hover {
+    cursor: pointer;
+    box-shadow: 0 0 30px greenyellow;
+    background-position: 100% 100%;
+}
+
+/* OVERLAY HUD DO CARD */
+.card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(to bottom,
+            rgba(0, 0, 0, 0.65),
+            rgba(0, 0, 0, 0.65)),
+        repeating-linear-gradient(to bottom,
+            rgba(0, 255, 0, 0.05),
+            rgba(0, 255, 0, 0.05) 1px,
+            transparent 2px,
+            transparent 4px);
+    z-index: 1;
+    pointer-events: none;
+    transition: 0.5s;
+}
+
+/* RODAPÉ */
+.footer {
+    padding: 2rem 1rem;
+    position: relative;
+    z-index: 3;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: black;
+    border-top: 1px solid #04a204;
+    box-shadow: 0 -5px 20px rgba(4, 162, 4, 0.4);
+    overflow: hidden;
+}
+
+/* TEXTO TERMINAL */
+.terminal-text {
+    font-size: 0.65rem;
+    color: #04a204;
+    text-shadow: 0 0 5px #04a204;
+    position: relative;
+    white-space: nowrap;
+}
+
+/* CURSOR PISCANDO */
+.terminal-text::after {
+    content: "▌";
+    margin-left: 5px;
+    animation: cursorBlink 1s infinite;
+}
+
+@keyframes cursorBlink {
+    50% {
+        opacity: 0;
+    }
+}
+
+/* LINHA DE SCAN ANIMADA */
+.footer::before {
+    content: "";
+    position: absolute;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom,
+            transparent,
+            rgba(0, 255, 0, 0.15),
+            transparent);
+    animation: scanFooter 4s linear infinite;
+}
+
+@keyframes scanFooter {
+    from {
+        top: -100%;
+    }
+
+    to {
+        top: 100%;
+    }
+}
+
+/* RESPONSIVIDADE */
+@media screen and (max-width: 1250px) {
+
+    .skills-cards,
+    .cards {
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .hero {
+        margin: 8rem 2rem;
+    }
+
+    .sobre {
+        padding: 7rem 2rem;
+        text-align: center;
+    }
+
+    .conteudo-sobre {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
+
+@media screen and (min-width: 801px) {
+    .btn-abrir-menu {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .interface {
+        padding: 2rem 1.5rem;
+    }
+
+    .btn-abrir-menu {
+        display: block;
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 9998;
+        cursor: pointer;
+    }
+
+    .menu-navegacao {
+        height: 100%;
+        display: none;
+        position: fixed;
+    }
+
+    .btn-contato {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .hud-circle {
+        width: 50%;
+        height: auto;
+        box-shadow: 0 0 5px #04a204, 0 0 50px #04a204, 0 0 100px #04a204;
+    }
+
+    .img-sobre img {
+        margin-top: 10%;
+        width: 60%;
+        height: auto;
+    }
+
+    .txt-sobre {
+        margin: 2rem 0;
+        font-size: 0.7rem;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .hero .typing {
+        font-size: 0.7rem;
+    }
+
+    .habilidades h2,
+    .projetos h2,
+    .sobre h2 {
+        font-size: 20px;
+    }
+
+    .habilidades h2 {
+        margin-top: 3%;
+    }
+
+    .glitch {
+        font-size: 1.5rem;
+        letter-spacing: 1.5px;
+        padding: 0 0.5rem;
+        text-align: center;
+    }
+}
+
+/* MENU MOBILE */
+.menu-mobile {
+    background-color: #040204da;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 9999;
+    width: 0;
+    overflow: hidden;
+    transition: .5s;
+}
+
+.menu-mobile.abrir-menu {
+    width: 70%;
+}
+
+.menu-mobile ul {
+    margin: 65px 10px;
+    text-align: right;
+    list-style: none;
+    display: block;
+    flex-direction: column;
+}
+
+.menu-mobile a {
+    display: block;
+    color: #04a204;
+    padding: 20px 3%;
+    font-size: 10px;
+    text-shadow: 0 0 10px #04a204;
+    text-decoration: none;
+}
+
+.menu-mobile a:hover {
+    color: black;
+    background-color: #04a204;
+}
+
+.btn-fechar {
+    margin: 20px 5%;
+    position: absolute;
+    color: #04a204;
+    cursor: pointer;
+}
+
+.btn-fechar svg {
+    width: 30px;
+    height: 30px;
+}
+
+.btn-abrir-menu svg {
+    width: 32px;
+    height: 32px;
+    color: #04a204;
+    filter: drop-shadow(0 0 10px #04a204);
+}

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="menu-mobile.js" defer></script>
+    <title>Portfólio</title>
+</head>
+
+<body>
+    <!-- LOADER TERMINAL -->
+    <div id="loader">
+        <div class="terminal">
+            <p>> Inicializando sistema...</p>
+            <p>> Carregando módulos<span class="dots"></span></p>
+            <p>> Acessando servidor...</p>
+            <p class="ok">> Acesso autorizado ✔</p>
+
+            <div class="progress-bar">
+                <div class="progress"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- OVERLAY ANIMADO -->
+    <div class="overlay"></div>
+
+    <header class="interface">
+        <nav class="menu-navegacao">
+            <ul>
+                <li><a class="" href="#home">Home</a></li>
+                <li><a class="" href="#skills">Skills</a></li>
+                <li><a class="" href="#sobre">Sobre</a></li>
+                <li><a class="" href="#projetos">Projetos</a></li>
+            </ul>
+        </nav>
+
+        <div class="btn-contato">
+            <button>Contato</button>
+        </div>
+
+        <div class="btn-abrir-menu" id="btn-abrir-menu">
+            <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-list"
+                viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                    d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
+            </svg>
+        </div>
+
+        <div class="menu-mobile" id="menu-mobile">
+            <div class="btn-fechar" id="btn-fechar">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-x-circle" viewBox="0 0 16 16">
+                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
+                    <path
+                        d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708" />
+                </svg>
+            </div>
+
+            <nav class="menu-navegacao-mobile">
+                <ul>
+                    <li><a class="" href="#home">Home</a></li>
+                    <li><a class="" href="#skills">Skills</a></li>
+                    <li><a class="" href="#sobre">Sobre</a></li>
+                    <li><a class="" href="#projetos">Projetos</a></li>
+                    <li><a class="" href="#social-icons">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- HERO -->
+        <section class="hero" id="home">
+            <div class="hud-circle">
+                <img src="img/Foto Perfil Dev.jpg" alt="Imagem Avatar">
+            </div>
+
+            <h1 class="glitch" data-text="DEV FULL STACK">DEV FULL STACK</h1>
+            <p class="typing">Desenvolvendo códigos com dedicação e entusiasmo, criando cada linha com cuidado, assim como uma costureira tece sua linha em cada detalhe da costura. Vejo cada projeto como uma oportunidade de aprendizado e cada bug como um desafio a ser superado.</p>
+
+            <div class="social-icons" id="social-icons">
+                <a href="https://github.com/ZackDevSys" target="_blank" aria-label="GitHub">
+                    <svg viewBox="0 0 24 24">
+                        <path
+                            d="M12 0.5C5.37 0.5 0 5.87 0 12.5c0 5.3 3.44 9.8 8.2 11.4.6.1.8-.26.8-.58v-2.03c-3.34.73-4.04-1.42-4.04-1.42-.55-1.4-1.35-1.77-1.35-1.77-1.1-.75.08-.73.08-.73 1.22.09 1.86 1.26 1.86 1.26 1.08 1.85 2.84 1.32 3.53 1 .1-.79.42-1.32.76-1.62-2.67-.3-5.47-1.34-5.47-5.95 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.17 0 0 1.01-.32 3.3 1.23a11.4 11.4 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.66 1.65.25 2.87.12 3.17.77.84 1.24 1.91 1.24 3.22 0 4.62-2.8 5.64-5.48 5.94.43.37.81 1.1.81 2.22v3.29c0 .32.2.69.81.58A12.01 12.01 0 0 0 24 12.5C24 5.87 18.63.5 12 .5z" />
+                    </svg>
+                </a>
+
+                <a href="https://www.linkedin.com/in/zack-dev" target="_blank" aria-label="LinkedIn">
+                    <svg viewBox="0 0 24 24">
+                        <path
+                            d="M4.98 3.5C4.98 4.88 3.86 6 2.48 6S0 4.88 0 3.5 1.12 1 2.5 1 5 2.12 4.98 3.5zM.5 8h4v16h-4zM8.5 8h3.8v2.2h.05c.53-1 1.82-2.2 3.75-2.2 4 0 4.74 2.63 4.74 6.05V24h-4v-8.4c0-2-.04-4.6-2.8-4.6-2.8 0-3.23 2.18-3.23 4.44V24h-4z" />
+                    </svg>
+                </a>
+
+                <a href="https://wa.me/5599999999999" target="_blank" aria-label="WhatsApp">
+                    <svg viewBox="0 0 32 32">
+                        <path
+                            d="M16 3C9.38 3 4 8.05 4 14.3c0 2.47.9 4.76 2.42 6.58L5 29l8.36-2.2c1.9.52 3.9.5 5.64-.05C24.04 25.18 28 20.07 28 14.3 28 8.05 22.62 3 16 3zm0 21.6c-1.64 0-3.25-.44-4.65-1.27l-.33-.2-4.96 1.3 1.33-4.75-.22-.34C6.13 18 5.6 16.17 5.6 14.3 5.6 9 10.3 4.8 16 4.8S26.4 9 26.4 14.3 21.7 24.6 16 24.6zm6.08-6.1c-.34-.17-2-1-2.3-1.12-.3-.11-.53-.17-.75.17-.22.34-.86 1.12-1.05 1.35-.2.22-.39.25-.73.08-.34-.17-1.43-.53-2.72-1.68-1-0.9-1.68-2-1.88-2.34-.2-.34-.02-.52.15-.7.16-.16.34-.39.52-.58.17-.2.22-.34.34-.56.11-.22.05-.42-.02-.58-.08-.17-.75-1.8-1.02-2.46-.27-.64-.54-.55-.75-.56h-.64c-.22 0-.58.08-.88.42-.3.34-1.16 1.14-1.16 2.78s1.18 3.22 1.35 3.44c.17.22 2.33 3.56 5.64 5 3.31 1.44 3.31.96 3.9.9.6-.05 1.95-.8 2.22-1.57.27-.78.27-1.45.2-1.57-.08-.11-.3-.2-.64-.36z" />
+                    </svg>
+                </a>
+            </div>
+        </section>
+
+        <!-- SKILL -->
+        <section class="habilidades" id="skills">
+            <h2>SKILLS</h2>
+
+            <div class="skills-container">
+                <div class="skills-cards">
+                    <div class="skills">
+                        <h2>Front-end</h2>
+                        <h3>HTML • CSS • JavaScript</h3>
+                    </div>
+
+                    <div class="skills">
+                        <h2>Back-end</h2>
+                        <h3>Java • PHP • Python</h3>
+                    </div>
+
+                    <div class="skills">
+                        <h2>Banco de Dados</h2>
+                        <h3>MySQL • PostgreSQL</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SOBRE MIM -->
+        <section class="sobre" id="sobre">
+            <h2>SOBRE</h2>
+            <div class="conteudo-sobre">
+                <div class="img-sobre">
+                    <img src="img/unnamed2.jpg" alt="">
+                </div>
+
+                <div class="txt-sobre">
+                    <h2>Isaac Costa</h2>
+                    <p>Sou apaixonado por tecnologia, presente em minha vida desde a infância. Ao longo do tempo, esse interesse só se fortaleceu, motivando-me a buscar constante evolução na área.</p>
+
+                    <p>Tenho grande interesse em atuar profissionalmente com tecnologia e estou sempre em busca de novos conhecimentos, aprimorando minhas habilidades tanto em Front-end quanto em Back-end, com foco em desenvolvimento de soluções eficientes e de qualidade.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJETOS -->
+        <section class="projetos" id="projetos">
+            <h2>MEUS PROJETOS</h2>
+
+            <div class="cards">
+                <div class="card">
+                    <h3>Futuros Projetos</h3>
+                </div>
+
+                <div class="card">
+                    <h3>Futuros Projetos</h3>
+                </div>
+
+                <div class="card">
+                    <h3>Futuros Projetos</h3>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p class="terminal-text">
+            root@portfolio:~$ Desenvolvido por Isaac Costa © 2025
+        </p>
+    </footer>
+</body>
+
+</html>
