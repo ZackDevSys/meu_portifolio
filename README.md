@@ -1,2 +1,2 @@
 # *Link para portfólio* #
-Preview: https://zackdevsys.github.io/meu_portifolio/
+Preview: https://zackdevsys.github.io/meu_portfolio/
